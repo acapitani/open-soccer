@@ -1,0 +1,258 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://actors/pitch/pitch.gd" type="Script" id=1]
+[ext_resource path="res://assets/Ready_Made_Pitch_And_Stadium.png" type="Texture" id=2]
+[ext_resource path="res://actors/crowd/crowd.tscn" type="PackedScene" id=3]
+[ext_resource path="res://actors/pitch/goal_up.tscn" type="PackedScene" id=4]
+[ext_resource path="res://actors/pitch/goal_down.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/inpitch.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 130, 4 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 4, 170 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 4, 170 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 128, 5 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 128, 5 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 4, 157 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 16, 72 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 16, 71 )
+
+[node name="pitch" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="pitch" type="Sprite" parent="."]
+editor/display_folded = true
+texture = ExtResource( 2 )
+
+[node name="crowd" type="Node2D" parent="pitch"]
+editor/display_folded = true
+
+[node name="crowd_0" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( -100, -189 )
+
+[node name="crowd_1" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( -68, -189 )
+
+[node name="crowd_2" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( -44, -189 )
+
+[node name="crowd_3" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( -12, -189 )
+
+[node name="crowd_4" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( 11.875, -189 )
+
+[node name="crowd_5" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( 44, -189 )
+
+[node name="crowd_6" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( 68, -189 )
+
+[node name="crowd_7" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( 100, -189 )
+
+[node name="crowd_8" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( 141, -134 )
+pos = 1
+
+[node name="crowd_9" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( 141, -109 )
+pos = 1
+
+[node name="crowd_10" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( 141, -54 )
+pos = 1
+
+[node name="crowd_11" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( 141, -29 )
+pos = 1
+
+[node name="crowd_12" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( 141, 26 )
+pos = 1
+
+[node name="crowd_13" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( 141, 51 )
+pos = 1
+
+[node name="crowd_14" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( 141, 106 )
+pos = 1
+
+[node name="crowd_15" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( 141, 131 )
+pos = 1
+
+[node name="crowd_16" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( 100, 187 )
+pos = 3
+
+[node name="crowd_17" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( 68, 187 )
+pos = 3
+
+[node name="crowd_18" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( 44, 187 )
+pos = 3
+
+[node name="crowd_19" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( 12, 187 )
+pos = 3
+
+[node name="crowd_20" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( -12, 187 )
+pos = 3
+
+[node name="crowd_21" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( -44, 187 )
+pos = 3
+
+[node name="crowd_22" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( -68, 187 )
+pos = 3
+
+[node name="crowd_23" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( -100, 187 )
+pos = 3
+
+[node name="crowd_24" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( -141, 131 )
+pos = 2
+
+[node name="crowd_25" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( -141, 107 )
+pos = 2
+
+[node name="crowd_26" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( -141, 51 )
+pos = 2
+
+[node name="crowd_27" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( -141, 27 )
+pos = 2
+
+[node name="crowd_28" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( -141, -29 )
+pos = 2
+
+[node name="crowd_29" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( -141, -53 )
+pos = 2
+
+[node name="crowd_30" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( -141, -109 )
+pos = 2
+
+[node name="crowd_31" parent="pitch/crowd" instance=ExtResource( 3 )]
+position = Vector2( -141, -133 )
+pos = 2
+
+[node name="goal_up" parent="pitch" instance=ExtResource( 4 )]
+position = Vector2( 0, -151 )
+
+[node name="goal_down" parent="pitch" instance=ExtResource( 5 )]
+position = Vector2( 0, 142 )
+
+[node name="positions" type="Node2D" parent="pitch"]
+editor/display_folded = true
+
+[node name="penaltykick_up" type="Position2D" parent="pitch/positions"]
+position = Vector2( 0, -108 )
+
+[node name="penaltykick_down" type="Position2D" parent="pitch/positions"]
+position = Vector2( 0, 108 )
+
+[node name="middlefield" type="Position2D" parent="pitch/positions"]
+
+[node name="enterpitch" type="Position2D" parent="pitch/positions"]
+position = Vector2( 128, 0 )
+
+[node name="start" type="Position2D" parent="pitch/positions"]
+position = Vector2( 148, 8 )
+
+[node name="in" type="Sprite" parent="pitch"]
+z_index = 1
+texture = ExtResource( 6 )
+offset = Vector2( 144, -1 )
+
+[node name="border_up" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 0, -174 )
+
+[node name="collision" type="CollisionShape2D" parent="border_up"]
+shape = SubResource( 1 )
+
+[node name="border_down" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 0, 172 )
+
+[node name="collision" type="CollisionShape2D" parent="border_down"]
+shape = SubResource( 1 )
+
+[node name="border_left" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( -132, 0 )
+
+[node name="collision" type="CollisionShape2D" parent="border_left"]
+shape = SubResource( 2 )
+
+[node name="border_right" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 132, 0 )
+
+[node name="collision" type="CollisionShape2D" parent="border_right"]
+shape = SubResource( 3 )
+
+[node name="limits" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="up" type="StaticBody2D" parent="limits"]
+editor/display_folded = true
+position = Vector2( 0, -162 )
+
+[node name="collision" type="CollisionShape2D" parent="limits/up"]
+shape = SubResource( 4 )
+
+[node name="down" type="StaticBody2D" parent="limits"]
+editor/display_folded = true
+position = Vector2( 0, 155 )
+
+[node name="collision" type="CollisionShape2D" parent="limits/down"]
+shape = SubResource( 5 )
+
+[node name="left" type="StaticBody2D" parent="limits"]
+editor/display_folded = true
+position = Vector2( -124, 0 )
+
+[node name="collision" type="CollisionShape2D" parent="limits/left"]
+shape = SubResource( 6 )
+
+[node name="right1" type="StaticBody2D" parent="limits"]
+editor/display_folded = true
+position = Vector2( 124, -86 )
+
+[node name="collision" type="CollisionShape2D" parent="limits/right1"]
+position = Vector2( 12, 0 )
+shape = SubResource( 7 )
+
+[node name="right2" type="StaticBody2D" parent="limits"]
+editor/display_folded = true
+position = Vector2( 124, 84 )
+
+[node name="collision" type="CollisionShape2D" parent="limits/right2"]
+position = Vector2( 12, 0 )
+shape = SubResource( 8 )

@@ -1,0 +1,390 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://actors/player/player.gd" type="Script" id=1]
+[ext_resource path="res://actors/player/cursor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/Shadow_Player.png" type="Texture" id=3]
+[ext_resource path="res://actors/player/player.shader" type="Shader" id=4]
+[ext_resource path="res://assets/Player_16x16_Sheet_Blue_A.png" type="Texture" id=5]
+[ext_resource path="res://actors/player/states/idle.gd" type="Script" id=6]
+[ext_resource path="res://actors/player/states/enterpitch.gd" type="Script" id=7]
+[ext_resource path="res://actors/player/states/ingame.gd" type="Script" id=8]
+[ext_resource path="res://actors/player/states/leavepitch.gd" type="Script" id=9]
+[ext_resource path="res://actors/player/states/outofgame.gd" type="Script" id=10]
+[ext_resource path="res://actors/player/states/receivepassage.gd" type="Script" id=11]
+[ext_resource path="res://actors/player/states/kickoff.gd" type="Script" id=12]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 4 )
+shader_param/team1_color1 = Plane( 0, 0, 0, 1 )
+shader_param/team1_color2 = Plane( 0.9, 0.9, 0.9, 1 )
+shader_param/team1_color3 = Plane( 0, 0, 0, 1 )
+shader_param/team2_color1 = Plane( 0, 0, 0, 1 )
+shader_param/team2_color2 = Plane( 0.9, 0, 0, 1 )
+shader_param/team2_color3 = Plane( 0, 0, 0, 1 )
+shader_param/goalkeeper_color1 = Plane( 0, 0, 0, 0 )
+shader_param/goalkeeper_color2 = null
+
+[sub_resource type="Animation" id=2]
+length = 2.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 96, 97 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "idle2"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 96, 97 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "idle3"
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 96, 97 ]
+}
+
+[sub_resource type="Animation" id=5]
+tracks/0/type = "value"
+tracks/0/path = NodePath("player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 49 ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 32, 33, 34, 35 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ball_container:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1, 4 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 40, 41, 42, 43 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ball_container:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3, 4 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 24, 25, 26, 27 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ball_container:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2, 4 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 48, 49, 50, 51 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ball_container:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -4, 2 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 16, 17, 18, 19 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ball_container:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3, 2 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ball_container:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 56, 57, 58, 59 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ball_container:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3, 1 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10, 11 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ball_container:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3, 1 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=14]
+radius = 4.0
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 2, 2 )
+
+[node name="player" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="cursor" parent="." instance=ExtResource( 2 )]
+
+[node name="shadow" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.12549 )
+texture = ExtResource( 3 )
+
+[node name="ball_container" type="Node2D" parent="."]
+position = Vector2( -1, 4 )
+
+[node name="player" type="Sprite" parent="."]
+material = SubResource( 1 )
+texture = ExtResource( 5 )
+vframes = 16
+hframes = 8
+frame = 96
+
+[node name="anim" type="AnimationPlayer" parent="."]
+autoplay = "run_upright"
+anims/idle = SubResource( 2 )
+anims/idle2 = SubResource( 3 )
+anims/idle3 = SubResource( 4 )
+anims/kickoff = SubResource( 5 )
+anims/run_down = SubResource( 6 )
+anims/run_downleft = SubResource( 7 )
+anims/run_downright = SubResource( 8 )
+anims/run_left = SubResource( 9 )
+anims/run_right = SubResource( 10 )
+anims/run_up = SubResource( 11 )
+anims/run_upleft = SubResource( 12 )
+anims/run_upright = SubResource( 13 )
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource( 14 )
+disabled = true
+
+[node name="states" type="Node" parent="."]
+
+[node name="idle" type="Node" parent="states"]
+script = ExtResource( 6 )
+
+[node name="enterpitch" type="Node" parent="states"]
+script = ExtResource( 7 )
+
+[node name="ingame" type="Node" parent="states"]
+script = ExtResource( 8 )
+
+[node name="leavepitch" type="Node" parent="states"]
+script = ExtResource( 9 )
+
+[node name="outofgame" type="Node" parent="states"]
+script = ExtResource( 10 )
+
+[node name="receivepassage" type="Node" parent="states"]
+script = ExtResource( 11 )
+
+[node name="kickoff" type="Node" parent="states"]
+script = ExtResource( 12 )
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="collision" type="CollisionShape2D" parent="hitbox"]
+position = Vector2( 0, 1 )
+shape = SubResource( 15 )
+
+[node name="nocatchball_timer" type="Timer" parent="."]
+one_shot = true
+[connection signal="timeout" from="nocatchball_timer" to="." method="_on_nocatchball_timer_timeout"]

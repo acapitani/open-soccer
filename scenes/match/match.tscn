@@ -1,0 +1,264 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scenes/match/match.gd" type="Script" id=1]
+[ext_resource path="res://actors/pitch/pitch.tscn" type="PackedScene" id=2]
+[ext_resource path="res://actors/player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://actors/ball/ball.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/camera.gd" type="Script" id=5]
+[ext_resource path="res://scenes/match/states/enterpitch.gd" type="Script" id=6]
+[ext_resource path="res://scenes/match/states/ingame.gd" type="Script" id=7]
+[ext_resource path="res://scenes/match/states/leavepitch.gd" type="Script" id=8]
+[ext_resource path="res://scenes/match/states/test.gd" type="Script" id=9]
+[ext_resource path="res://scenes/match/states/idle.gd" type="Script" id=10]
+[ext_resource path="res://scenes/match/states/kickoff.gd" type="Script" id=11]
+
+[sub_resource type="Animation" id=1]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "idle_next_state"
+} ]
+}
+
+[node name="match" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="pitch" parent="." instance=ExtResource( 2 )]
+
+[node name="actors" type="YSort" parent="."]
+editor/display_folded = true
+
+[node name="playerA1" parent="actors" instance=ExtResource( 3 )]
+position = Vector2( 4, -5 )
+id = 1
+
+[node name="playerA2" parent="actors" instance=ExtResource( 3 )]
+position = Vector2( 50, -25 )
+skin = 1
+id = 2
+
+[node name="playerA3" parent="actors" instance=ExtResource( 3 )]
+position = Vector2( -30, 45 )
+skin = 2
+id = 3
+
+[node name="playerA4" parent="actors" instance=ExtResource( 3 )]
+position = Vector2( -30, 45 )
+skin = 2
+id = 3
+
+[node name="playerA5" parent="actors" instance=ExtResource( 3 )]
+position = Vector2( -30, 45 )
+skin = 2
+id = 3
+
+[node name="playerA6" parent="actors" instance=ExtResource( 3 )]
+position = Vector2( -30, 45 )
+skin = 2
+id = 3
+
+[node name="playerA7" parent="actors" instance=ExtResource( 3 )]
+position = Vector2( -30, 45 )
+skin = 2
+id = 3
+
+[node name="playerA8" parent="actors" instance=ExtResource( 3 )]
+position = Vector2( -30, 45 )
+skin = 2
+id = 3
+
+[node name="playerA9" parent="actors" instance=ExtResource( 3 )]
+position = Vector2( -30, 45 )
+skin = 2
+id = 3
+
+[node name="playerA10" parent="actors" instance=ExtResource( 3 )]
+position = Vector2( -30, 45 )
+skin = 2
+id = 3
+
+[node name="playerB1" parent="actors" instance=ExtResource( 3 )]
+position = Vector2( 95, 88 )
+team = 1
+skin = 2
+id = 1
+
+[node name="playerB2" parent="actors" instance=ExtResource( 3 )]
+position = Vector2( 100, -67 )
+team = 1
+skin = 3
+id = 2
+
+[node name="playerB3" parent="actors" instance=ExtResource( 3 )]
+position = Vector2( 100, -67 )
+team = 1
+skin = 3
+id = 2
+
+[node name="playerB4" parent="actors" instance=ExtResource( 3 )]
+position = Vector2( 100, -67 )
+team = 1
+skin = 3
+id = 2
+
+[node name="playerB5" parent="actors" instance=ExtResource( 3 )]
+position = Vector2( 100, -67 )
+team = 1
+skin = 3
+id = 2
+
+[node name="playerB6" parent="actors" instance=ExtResource( 3 )]
+position = Vector2( 100, -67 )
+team = 1
+skin = 3
+id = 2
+
+[node name="playerB7" parent="actors" instance=ExtResource( 3 )]
+position = Vector2( 100, -67 )
+team = 1
+skin = 3
+id = 2
+
+[node name="playerB8" parent="actors" instance=ExtResource( 3 )]
+position = Vector2( 100, -67 )
+team = 1
+skin = 3
+id = 2
+
+[node name="playerB9" parent="actors" instance=ExtResource( 3 )]
+position = Vector2( 100, -67 )
+team = 1
+skin = 3
+id = 2
+
+[node name="playerB10" parent="actors" instance=ExtResource( 3 )]
+position = Vector2( 100, -67 )
+team = 1
+skin = 3
+id = 2
+
+[node name="ball_container" type="Node2D" parent="actors"]
+editor/display_folded = true
+
+[node name="ball" parent="actors/ball_container" instance=ExtResource( 4 )]
+
+[node name="camera_target" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="camera" type="Camera2D" parent="camera_target"]
+current = true
+limit_left = -160
+limit_top = -210
+limit_right = 160
+limit_bottom = 210
+editor_draw_limits = true
+script = ExtResource( 5 )
+
+[node name="states" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="enterpitch" type="Node" parent="states"]
+script = ExtResource( 6 )
+
+[node name="ingame" type="Node" parent="states"]
+script = ExtResource( 7 )
+
+[node name="leavepitch" type="Node" parent="states"]
+script = ExtResource( 8 )
+
+[node name="test" type="Node" parent="states"]
+script = ExtResource( 9 )
+
+[node name="idle" type="Node" parent="states"]
+script = ExtResource( 10 )
+
+[node name="kickoff" type="Node" parent="states"]
+script = ExtResource( 11 )
+
+[node name="fader" type="Node2D" parent="."]
+editor/display_folded = true
+z_index = 1
+
+[node name="fade" type="Polygon2D" parent="fader"]
+color = Color( 0, 0, 0, 0 )
+antialiased = true
+polygon = PoolVector2Array( -162, -212, 162, -212, 162, 212, -162, 212 )
+
+[node name="anim" type="AnimationPlayer" parent="fader"]
+anims/fade_in = SubResource( 1 )
+anims/fade_out = SubResource( 2 )
+
+[node name="sectors" type="Node2D" parent="."]
+visible = false
+
+[node name="sector_0" type="Polygon2D" parent="sectors"]
+color = Color( 1, 1, 1, 0.313726 )
+offset = Vector2( 0, -120 )
+polygon = PoolVector2Array( -120, -20, 120, -20, 120, 20, -120, 20 )
+
+[node name="sector_1" type="Polygon2D" parent="sectors"]
+color = Color( 1, 1, 0, 0.313726 )
+offset = Vector2( 0, -80 )
+polygon = PoolVector2Array( -120, -20, 120, -20, 120, 20, -120, 20 )
+
+[node name="sector_2" type="Polygon2D" parent="sectors"]
+color = Color( 1, 1, 1, 0.313726 )
+offset = Vector2( 0, -40 )
+polygon = PoolVector2Array( -120, -20, 120, -20, 120, 20, -120, 20 )
+
+[node name="sector_3" type="Polygon2D" parent="sectors"]
+color = Color( 1, 1, 0, 0.313726 )
+polygon = PoolVector2Array( -120, -20, 120, -20, 120, 20, -120, 20 )
+
+[node name="sector_4" type="Polygon2D" parent="sectors"]
+color = Color( 1, 1, 1, 0.313726 )
+offset = Vector2( 0, 40 )
+polygon = PoolVector2Array( -120, -20, 120, -20, 120, 20, -120, 20 )
+
+[node name="sector_5" type="Polygon2D" parent="sectors"]
+color = Color( 1, 1, 0, 0.313726 )
+offset = Vector2( 0, 80 )
+polygon = PoolVector2Array( -120, -20, 120, -20, 120, 20, -120, 20 )
+
+[node name="sector_6" type="Polygon2D" parent="sectors"]
+color = Color( 1, 1, 1, 0.313726 )
+offset = Vector2( 0, 120 )
+polygon = PoolVector2Array( -120, -20, 120, -20, 120, 20, -120, 20 )
